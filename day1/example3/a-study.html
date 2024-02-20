@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>
+        我创建了一个指向
+        <a href="https://www.mozilla.org/zh-CN/">Mozilla 主页</a>的链接。
+    </p>
+
+    <a href="https://developer.mozilla.org/zh-CN/">
+        <h1>MDN Web 文档</h1>
+    </a>
+    <p>自从 2005 年起，就开始记载包括 CSS、HTML、JavaScript 等网络技术。</p>
+
+    <a href="https://developer.mozilla.org/zh-CN/">
+        <img src="../example1/favicon.ico" alt="MDN Web 文档主页" />
+    </a>
+
+<!-- title 实现鼠标停靠在链接上时显示文本 -->
+    <p>
+        我创建了一个指向<a
+            href="https://www.mozilla.org/zh-CN/"
+            title="了解 Mozilla 使命以及如何参与贡献的最佳站点。"
+            >Mozilla 主页</a
+        >的超链接。
+    </p>
+
+    <p>
+        要联系某位工作人员，请访问我们的<a href="ol-study.html">联系人页面</a>。
+    </p>
+
+    <h2 id="Mailing_address">邮寄地址</h2>
+    <p>本页面底部可以找到<a href="#Mailing_address">公司邮寄地址</a>。</p>
+<!-- 跳转到另一个 html 文件的指定了 id 的文档片段 -->
+    <p>本页面底部可以找到<a href="poetry-formatter.html#Poetry_h1">公司邮寄地址</a>。</p>
+
+<!-- 实际上，电子邮件地址是可选的。如果你省略了它（也就是说，你的 href 属性仅仅只是简单的“mailto:”），发送新的电子邮件的窗口也会被用户的邮件客户端打开，只是没有收件人的地址信息，这通常在“分享”链接是很有用的，用户可以给他们选择的地址发送邮件。 -->
+    <a href="mailto:nowhere@mozilla.org">向 nowhere 发邮件</a>
+
+<!-- 除了电子邮件地址，你还可以提供其他信息。事实上，任何标准的邮件头字段可以被添加到你提供的 mailto URL 中。其中最常用的是主题（subject）、抄送（cc）和主体（body）（这不是一个真正的标头字段，但允许你为新邮件指定一个简短的内容消息）。每个字段及其值被指定为查询项。 -->
+<!-- 每个字段的值必须使用 URL 编码，即使用百分号转义的非打印字符（不可见字符如制表符、换行符、分页符）和空格。同时注意使用问号（?）来分隔主 URL 与参数值，以及使用 & 符来分隔 mailto: URL 中的各个参数。这是标准的 URL 查询标记方法。 -->
+    <a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+        发送含有 cc、bcc、主题和主体的邮件
+    </a>
+</body>
+</html>

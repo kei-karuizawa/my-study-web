@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Here is a blockquote:</p>
+<!-- blockquote 引用样式：浏览器的默认样式会将其呈现为缩进的段落，作为引用的指示 -->
+    <blockquote
+            cite="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/blockquote">
+        <p>
+            The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or
+            <em>HTML Block Quotation Element</em>) indicates that the enclosed text is
+            an extended quotation.
+        </p>
+    </blockquote>
+
+<!-- 浏览器默认将行内引用标记的文本作为普通文本放入引号内表示引用 -->
+    <p>
+        The quote element — <code>&lt;q&gt;</code> — is
+        <q cite="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/q"
+            >intended for short quotations that don't require paragraph breaks.</q
+        >
+    </p>
+
+    <p>
+        According to the
+        <a href="/zh-CN/docs/Web/HTML/Element/blockquote">
+            <cite>MDN blockquote page</cite></a
+        >:
+    </p>
+
+    <blockquote
+            cite="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/blockquote">
+        <p>
+            The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or
+            <em>HTML Block Quotation Element</em>) indicates that the enclosed text is
+            an extended quotation.
+        </p>
+    </blockquote>
+
+<!--
+引文 cite 属性的内容看起来很有用，但不幸的是，浏览器、屏幕阅读器并没有充分利用它。如果不使用 JavaScript 或 CSS 编写自己的解决方案，就没有办法让浏览器显示 cite 的内容。如果你想在页面上提供引文的来源，你需要在文本中通过链接或其他适当的方式来提供它。
+这里有 <cite> 元素，但它是为了包含所引用资源的标题（如书名）。然而，你没有理由不把 <cite> 内的文字以某种方式链接到引用源。
+-->
+    <p>
+        The quote element — <code>&lt;q&gt;</code> — is
+        <q cite="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/q"
+            >intended for short quotations that don't require paragraph breaks.</q
+        >
+        — <a href="/zh-CN/docs/Web/HTML/Element/q"> <cite>MDN q page</cite></a
+    >.
+    </p>
+</body>
+</html>
