@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!--
+你能对一个元素应用多个类，然后分别指向它们，或者仅仅在选择器中存在所有这些类的时候选择这一元素。在你的站点上，构建可以以不同方式组合起来的组件的时候，这会有用。
+
+在下面的示例中，有一个包含了一条笔记的 <div>。灰色的边框在盒子带有 notebox 类的时候应用。如果它还有一个 warning 或是 danger 类，我们改变 border-color。
+-->
+    <div class="notebox">
+        This is an informational note.
+    </div>
+
+    <div class="notebox warning">
+        This note shows a warning.
+    </div>
+
+    <div class="notebox danger">
+        This note shows danger!
+    </div>
+
+    <div class="danger">
+        This won't get styled — it also needs to have the notebox class
+    </div>
+
+<!--
+ID 选择器开头为 # 而非句点，不过基本上和类选择器是同种用法。可是在一篇文档中，一个 ID 只会用到一次。它能选中设定了 id 的元素，你可以在 ID 前面加上类型选择器，只指向元素和 ID 都匹配的类。
+-->
+    <h1 id="heading">ID selector</h1>
+    <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo
+        melon azuki bean garlic.</p>
+
+    <p id="one">Gumbo beet greens corn soko <strong>endive</strong> gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard
+        greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+<!--
+**备注：**
+正如我们在和特定性相关的课里面学到的那样，ID 所指特定，会优先于大多数其他选择器。所以很难处理它们。大多数情况下，给一个元素加个类，而不是使用 ID，会更好。不过要是 ID 是唯一一种指定这个元素的方式的话——也许是因为你没法访问标记标记因此不能编辑——这种方式可行。
+-->
+</body>
+</html>
