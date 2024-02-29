@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>在 CSS 中添加了边框的段落。浏览器会将其渲染为一个盒子框。段落从新行开始，并扩展整个可用宽度。</h1>
+    <p>I am a paragraph. A short one.</p>
+
+    <h1>使用 display: flex 布局的列表。这就为容器的子项（即弹性项）建立了弹性布局。列表本身是一个区块盒子，与段落一样，会扩展到整个容器的宽度，然后换行。</h1>
+    <ul>
+        <li>Item One</li>
+        <li>Item Two</li>
+        <li>Item Three</li>
+    </ul>
+
+    <h1>一个块级段落，内含两个 span 元素。这些元素通常是 inline，但是其中一个元素的类是 block，令其被设置为 display: block。</h1>
+    <p>I am another paragraph. Some of the <span class="block">words</span> have been wrapped in a <span>span element</span>.</p>
+
+    <h1>第一段中的 span 元素默认为行级，因此不会强制换行。</h1>
+    <p>
+        I am a paragraph. Some of the
+        <span>words</span> have been wrapped in a
+        <span>span element</span>.
+    </p>
+    <h1>设置为 display: inline-flex 的 ul 元素会创建一个行向盒子，其中包含一些弹性项目。</h1>
+    <ul>
+        <li>Item One</li>
+        <li>Item Two</li>
+        <li>Item Three</li>
+    </ul>
+    <h1>这两个段落都设置为 display: inline。行向弹性容器和段落都在一行中流动，而不是分成两行（如果它们显示为块级元素，就会这样）。</h1>
+    <p class="inline">I am a paragraph. A short one.</p>
+    <p class="inline">I am another paragraph. Also a short one.</p>
+
+<!--
+根据外边距相接触的两个元素是正边距还是负边距，结果会有所不同：
+
+两个正外边距将合并为一个外边距。其大小等于最大的单个外边距。
+两个负外边距会折叠，并使用最小（离零最远）的值。
+如果其中一个外边距为负值，其值将从总值中减去。
+在下面的示例中，我们有两个段落。最上面一段的 margin-bottom 为 50 像素，另一段的 margin-top 为 30 像素。页边距折叠在一起，因此方框之间的实际页边距是 50 像素，而不是两个页边距的总和。
+
+你可以通过将第 2 段的 margin-top 设置为 0 来测试它。两个段落之间的可见边距不会改变——它保留了第一个段落 margin-bottom 设置的 50 像素。如果将其设置为 -10px，你会发现总边距变成了 40px（从 50px 中减去该负值）。
+-->
+    <h1>外边距折叠</h1>
+    <div class="container">
+        <p class="one">I am paragraph one.</p>
+        <p class="two">I am paragraph two.</p>
+    </div>
+</body>
+</html>

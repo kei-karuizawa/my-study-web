@@ -1,0 +1,31 @@
+/*
+display 为 flex 时，意味着：
+
+1、子元素整齐排成一行，因为父元素的 flex-direction 默认是 row。
+
+2、子元素全都被拉伸至和最高的元素高度相同，是因为父元素上 align-items 属性的初值是 stretch。
+所有项目都从容器的开始位置进行排列，排列成一行后，在尾部留下一片空白。
+*/
+.wrapper1 {
+    display: flex;
+}
+
+/*
+在我们的所有子元素上添加 flex 属性，并赋值为 1，这会使得所有的子元素都伸展并填充容器，而不是在尾部留下空白，如果有更多空间，那么子元素们就会变得更宽，反之，他们就会变得更窄。
+*/
+.wrapper2 {
+    display: flex;
+}
+.wrapper2 > div {
+    display: flex;
+    flex: 1;
+}
+
+/* 匹配带有一个名为 class 的属性的元素，其值开头为 box 子字符串。 */
+div[class^="box"] {
+    background-color: green;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: 10px;
+}
