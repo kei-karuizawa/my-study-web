@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1, 2, 3, 4, [6, 9, 4]];
+
+        let arrTemp = arr1;
+        // true，数组（引用类型）相等比较的是内存地址是否相等
+        // 所以这里并没有克隆
+        console.log(arrTemp == arr1);
+
+        // 结果数组
+        let result = [];
+
+        // 遍历数组中每一项，把遍历到的项推入结果数组中
+        for (let i = 0; i < arr1.length; i++) {
+          result.push(arr1[i]);
+        }
+
+        // (5) [1, 2, 3, 4, Array(3)]
+        console.log(result);
+
+        // false，引用类型比较时，比较的是内存地址
+        // 从输出结果来看，似乎完成深克隆了？然而并不是
+        console.log(result == arr1);
+
+        // true，出现了“藕断丝连”现象
+        // 从这里的输出结果来看，`arr1` 中的前四项（基本数值类型）是完成克隆了，
+        // 但是最后一项，也就是数组项（引用类型），并没有被克隆
+        // 所以这里并没有完成深克隆，只是浅克隆，因为只克隆了数组的第一层
+        console.log(result[4] == arr1[4]);
+    </script>
+</body>
+</html>

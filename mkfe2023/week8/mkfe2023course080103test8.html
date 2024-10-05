@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>下文规则 4 - 1</title>
+</head>
+<body>
+    <script>
+        var a = 1;
+        let obj = {
+            a: 2,
+            fun: (function () {
+                let a = this.a;
+                return function () {
+                    console.log(a + this.a);
+                }
+            })()  // 这里有一个立即执行函数，所以 `let a = this.a` 会立即执行，上下文是 `window` 对象，所以 `a` 的值是全局变量 1
+        };
+
+        obj.fun();  // 3（1 + 2）；这行代码是对象直接打点调用，适用规则 1，上下文是对象本身，所以函数内的 `this.a` 的值是 2
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>下文规则 5 - 1</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            a: 1,
+            b: 2,
+            fun: function () {
+                console.log(this.a + this.b);
+            }
+        };
+
+        var a = 3;
+        var b = 4;
+
+        setTimeout(obj.fun, 2000);  // 7（3 + 4）；定时器内调用函数，适用规则 5
+    </script>
+</body>
+</html>

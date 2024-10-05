@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>原型链查找</title>
+</head>
+<body>
+    <script>
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        let xiaoming = new People('小明', 12, '男');
+        console.log(xiaoming.nationality);  // undefined
+
+        // 在构造函数的 `prototype` 上添加属性
+        People.prototype.nationality = '中国';
+        console.log(xiaoming.nationality);  // 中国
+
+        console.log(xiaoming.hasOwnProperty('name'));  // true
+        console.log(xiaoming.hasOwnProperty('nationality'));  // false
+    </script>
+</body>
+</html>

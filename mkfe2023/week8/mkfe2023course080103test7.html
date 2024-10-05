@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>下文规则 3 - 2</title>
+</head>
+<body>
+    <script>
+        function fun() {
+            arguments[3]();  // 'b'；数组中枚举出函数进行调用，适用规则 3
+        }
+        fun('a', 'b', 'c', function () {
+            console.log(this[1]);
+        });
+    </script>
+</body>
+</html>

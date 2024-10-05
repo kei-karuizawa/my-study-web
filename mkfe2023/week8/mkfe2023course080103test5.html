@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>下文规则 2 - 2</title>
+</head>
+<body>
+    <script>
+        function fun() {
+            return this.a + this.b;
+        }
+
+        var a = 1;
+        var b = 2;
+        let obj = {
+            a: 3,
+            b: fun(),  // 3（1 + 2）；直接圆括号调用，使用规则 2
+            fun: fun
+        };
+
+        let result = obj.fun();  // 6（3 + 3）；对象打点调用，适用规则 1
+        console.log(result);
+    </script>
+</body>
+</html>

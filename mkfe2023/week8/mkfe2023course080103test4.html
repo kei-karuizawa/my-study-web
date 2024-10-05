@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>下文规则 2 - 1</title>
+</head>
+<body>
+    <script>
+        let obj1 = {
+            a: 1,
+            b: 2,
+            fn: function () {
+                console.log(this.a + this.b);
+            }
+        };
+
+        // 这里用 `var` 声明才可以成为 `window` 的属性，用 `let` 结果是 `NaN`
+        var a = 3;
+        var b = 4;
+
+        let fn = obj1.fn;
+        fn();  // 7（3 + 4）；圆括号调用函数，适用规则 2
+    </script>
+</body>
+</html>

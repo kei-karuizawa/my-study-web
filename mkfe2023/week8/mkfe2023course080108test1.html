@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>内置构造函数</title>
+</head>
+<body>
+    <script>
+        function fun() {}
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        console.log(fun instanceof Function);  // true
+        console.log(add instanceof Function);  // true
+
+        let jiafa = new Function('a', 'b', 'return a + b');
+        console.log(jiafa(8, 3));  // 11
+
+        console.log(Array.prototype.hasOwnProperty('push'));  // true
+
+        Array.prototype.qiuhe = function () {
+            // this 表示调用 `qiuhe` 方法的数组
+            let arr = this;
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+
+        console.log([3, 6, 9, 12].qiuhe());  // 30
+        console.log(Array.prototype.hasOwnProperty('qiuhe'));  // true
+
+        console.log(Object.prototype === Function.prototype);  // false
+
+        let object = new Object();
+        let my_function = new Function();
+        console.log(object.__proto__ === Function.prototype.__proto__);  // true
+        console.log(object.__proto__ === my_function.__proto__.__proto__);  // true
+    </script>
+</body>
+</html>

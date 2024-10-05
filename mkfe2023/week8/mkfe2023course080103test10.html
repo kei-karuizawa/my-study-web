@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>下文规则 5 - 2</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            a: 1,
+            b: 2,
+            fun: function () {
+                console.log(this.a + this.b);
+            }
+        };
+
+        var a = 3;
+        var b = 4;
+
+        setTimeout(function () {
+            obj.fun();  // 3（1 + 2）；这种情况适用规则 1，对象直接打点调用，上下文是对象本身
+        }, 2000);
+    </script>
+</body>
+</html>
